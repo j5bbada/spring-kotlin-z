@@ -1,0 +1,24 @@
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    url: jdbc:mariadb://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:PERSONS}
+    username: ${DB_USERNAME:spring}
+    password: ${DB_PASSWORD:spring}
+    #url: jdbc:h2:file:${user.home}/kotlin-tutorial/db
+    #username: sa
+    #password: sa
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
